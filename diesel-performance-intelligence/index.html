@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Diesel Performance Intelligence</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <h1>⛽ Diesel Performance Intelligence</h1>
+  <p class="sub">Track fuel economy, cost and engine health from simple fill-up logs (full-tank method).</p>
+
+  <div class="grid kpis" id="kpis"></div>
+  <div id="alerts" style="margin-top:12px"></div>
+
+  <div class="grid two">
+    <div class="card"><h2>Add fill-up</h2>
+      <form id="f">
+        <label>Date<input type="date" id="d" required></label>
+        <label>Odometer (km)<input type="number" id="o" required min="0"></label>
+        <label>Diesel filled (L)<input type="number" id="l" step="0.01" required min="0.1"></label>
+        <label>Price (₹/L)<input type="number" id="p" step="0.01" required min="0"></label>
+        <button type="submit">Add entry</button>
+      </form>
+    </div>
+    <div class="card"><h2>Fuel efficiency trend (km/L)</h2><div id="chart"></div></div>
+  </div>
+
+  <div class="grid two">
+    <div class="card"><h2>Maintenance schedule</h2><div id="maint"></div></div>
+    <div class="card"><h2>Fill-up history</h2><div class="scroll" style="max-height:300px;overflow-y:auto"><table id="tbl"></table></div>
+      <p style="margin:10px 0 0"><button class="sec" id="reset">Reset sample data</button></p></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
